@@ -5,14 +5,14 @@ using System.Windows.Data;
 
 namespace CountingDown
 {
-    public class CurrentTimeViewModel : INotifyPropertyChanged
+    public class RemainingTimeViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private readonly Timer timer = new Timer(1);
         private readonly DateTime _endDate = new DateTime(2014, 09, 24);
         private TimeSpan _remainingTime;
 
-        public CurrentTimeViewModel()
+        public RemainingTimeViewModel()
         {
             timer = new Timer(1);
             timer.Elapsed += delegate

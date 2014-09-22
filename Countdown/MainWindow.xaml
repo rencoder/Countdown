@@ -4,7 +4,7 @@
         xmlns:viewModel="clr-namespace:CountingDown"
         Title="MainWindow" Height="346.94" Width="1100" WindowStyle="None" BorderThickness="0" AllowsTransparency="False">
     <Window.DataContext>
-        <viewModel:CurrentTimeViewModel/>
+        <viewModel:RemainingTimeViewModel/>
     </Window.DataContext>
     <Window.Resources>
         <Storyboard x:Key="storyboard1" AutoReverse="True" RepeatBehavior="Forever"/>
