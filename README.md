@@ -3,6 +3,6 @@ Countdown
 
 A simple countdown viewer I developed while teaching myself basic XAML, MVVM, and data binding.
 
-Screencap
----------
-Coming soon...
+Screencaps
+----------
+![Countdown window](https://raw.githubusercontent.com/rencoder/Countdown/master/Screencaps/1.png)
