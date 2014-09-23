@@ -17,7 +17,6 @@ namespace CountingDown
             timer = new Timer(1);
             timer.Elapsed += delegate
             {
-
                 RemainingTime = _endDate.Subtract(DateTime.Now);
             };
             timer.Enabled = true;
