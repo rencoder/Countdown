@@ -1,0 +1,32 @@
+﻿<Window x:Class="CountingDown.SelectEndDateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelectEndDateWindow" Height="240" Width="300"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFF3F3F3" Offset="1"/>
+            <GradientStop Color="#FF9C9C9C"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style
+            TargetType="DatePickerTextBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style 
+            TargetType="TextBox">
+            <EventSetter Event="KeyDown" Handler="OnKeyDown"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Calendar Grid.Row="0" />
+        
+    </Grid>
+</Window>
