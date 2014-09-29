@@ -2,9 +2,8 @@
 using System.ComponentModel;
 using System.Timers;
 using System.Windows.Data;
-using System.Windows;
 
-namespace CountingDown
+namespace Countdown
 {
     public class RemainingTimeViewModel : INotifyPropertyChanged
     {
@@ -18,8 +17,9 @@ namespace CountingDown
             if (_endDate.Equals(default(DateTime)))
             {
                 var window = new SelectEndDateWindow();
-                window.ShowDialog();
-                return;
+                if (!window.ShowDialog().Value)
+                    return;
+                _endDate = Properties.Settings.Default.EndDate;
             }
             timer = new Timer(1);
             timer.Elapsed += delegate

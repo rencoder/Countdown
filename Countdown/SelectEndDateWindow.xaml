@@ -1,8 +1,8 @@
-﻿<Window x:Class="CountingDown.SelectEndDateWindow"
+﻿<Window x:Class="Countdown.SelectEndDateWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SelectEndDateWindow" Height="240" Width="300"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+        Title="SelectEndDateWindow" Width="200"  Height="260"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" WindowStyle="None" Padding="0,20,0,0">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFF3F3F3" Offset="1"/>
@@ -19,14 +19,36 @@
         <Style 
             TargetType="TextBox">
             <EventSetter Event="KeyDown" Handler="OnKeyDown"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+        <Style
+            TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Padding"  Value="0,0,0,10"/>
         </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Calendar Grid.Row="0" />
-        
+        <Calendar Grid.Row="0" Name="calendar" />
+        <StackPanel Grid.Row="1"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center">
+            <TextBox Text="12" Name="txtHours" />
+            <Label Content=":" />
+            <TextBox Text="00" Name="txtMinutes" />
+            <Label Content=":" />
+            <TextBox Text="00" Name="txtSeconds" />
+        </StackPanel>
+        <Button Grid.Row="2"
+                Content="Begin countdown!"
+                Margin="5,0,5,5"
+                Click="OnClick"/>
     </Grid>
 </Window>

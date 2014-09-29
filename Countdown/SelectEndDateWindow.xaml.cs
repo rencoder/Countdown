@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CountingDown
+namespace Countdown
 {
     /// <summary>
     /// Interaction logic for SelectEndDateWindow.xaml
@@ -23,6 +23,20 @@ namespace CountingDown
         {
             InitializeComponent();
             
+        }
+
+        private void OnClick(object sender, EventArgs e)
+        {
+            var date = calendar.SelectedDate.Value;
+            Properties.Settings.Default.EndDate = new DateTime(date.Year, date.Month, date.Day, Convert.ToInt32(txtHours.Text), Convert.ToInt32(txtMinutes.Text), Convert.ToInt32(txtSeconds.Text));
+            Properties.Settings.Default.Save();
+            DialogResult = true;
+            Close();
+        }
+
+        private void OnKeyDown(object sender, KeyEventArgs e)
+        {
+            //TODO validation
         }
     }
 }

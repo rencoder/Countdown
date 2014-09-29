@@ -7,8 +7,8 @@
     <ProjectGuid>{B4A8763C-7144-4AA2-B352-98550CF1312D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CountingDown</RootNamespace>
-    <AssemblyName>CountingDown</AssemblyName>
+    <RootNamespace>Countdown</RootNamespace>
+    <AssemblyName>Countdown</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
