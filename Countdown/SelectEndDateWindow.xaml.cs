@@ -22,21 +22,35 @@ namespace Countdown
         public SelectEndDateWindow()
         {
             InitializeComponent();
-            
         }
 
         private void OnClick(object sender, EventArgs e)
         {
             var date = calendar.SelectedDate.Value;
-            Properties.Settings.Default.EndDate = new DateTime(date.Year, date.Month, date.Day, Convert.ToInt32(txtHours.Text), Convert.ToInt32(txtMinutes.Text), Convert.ToInt32(txtSeconds.Text));
-            Properties.Settings.Default.Save();
-            DialogResult = true;
-            Close();
+            try
+            {
+                Properties.Settings.Default.EndDate = new DateTime(date.Year, date.Month, date.Day,
+                    Convert.ToInt32(txtHours.Text), Convert.ToInt32(txtMinutes.Text), Convert.ToInt32(txtSeconds.Text));
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Please enter a valid date/time.", String.Empty, MessageBoxButton.OK);
+            }
+            if (Properties.Settings.Default.EndDate < DateTime.Now)
+                MessageBox.Show("You cannot choose a past date/time.", String.Empty, MessageBoxButton.OK);
+            else
+            {
+                Properties.Settings.Default.Save();
+                DialogResult = true;
+                Close();
+            }
         }
 
         private void OnKeyDown(object sender, KeyEventArgs e)
         {
-            //TODO validation
+            e.Handled = !(e.Key >= Key.D0 && e.Key <= Key.D9)
+                && !(e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+                && e.Key != Key.LeftShift && e.Key != Key.RightShift && e.Key != Key.Tab;
         }
     }
 }
