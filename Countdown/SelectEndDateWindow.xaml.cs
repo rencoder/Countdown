@@ -46,11 +46,17 @@ namespace Countdown
             }
         }
 
-        private void OnKeyDown(object sender, KeyEventArgs e)
+        private void OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = !(e.Key >= Key.D0 && e.Key <= Key.D9)
-                && !(e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
-                && e.Key != Key.LeftShift && e.Key != Key.RightShift && e.Key != Key.Tab;
+            e.Handled = !Char.IsNumber(e.Text.ElementAtOrDefault(0));
+        }
+
+        private void OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            int intResult;
+            var textBox = sender as TextBox;
+            if (!Int32.TryParse(textBox.Text, out intResult))
+                textBox.Clear();
         }
     }
 }
