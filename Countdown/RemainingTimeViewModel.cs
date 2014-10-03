@@ -14,7 +14,8 @@ namespace Countdown
 
         public RemainingTimeViewModel()
         {
-            if (_endDate.Equals(default(DateTime)))
+            _endDate = default(DateTime);
+            if (_endDate.Equals(default(DateTime)) || _endDate <= DateTime.Now)
             {
                 var window = new SelectEndDateWindow();
                 if (!window.ShowDialog().Value)

@@ -11,11 +11,18 @@ namespace Countdown
         public MainWindow()
         {
             InitializeComponent();
-            MouseDown += (sender, obj) =>
-            {
-                if (obj.LeftButton == MouseButtonState.Pressed)
-                    DragMove();
-            };
+        }
+
+        private void Window_OnMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void OnMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                Application.Current.Shutdown();
         }
     }
 }

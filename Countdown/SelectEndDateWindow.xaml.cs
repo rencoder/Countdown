@@ -46,6 +46,12 @@ namespace Countdown
             }
         }
 
+        private void Window_OnMouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
         private void OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !Char.IsNumber(e.Text.ElementAtOrDefault(0));
