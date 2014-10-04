@@ -104,35 +104,29 @@
         </TextBox>
         <TextBox Grid.Column="0"
                  Style="{StaticResource textBoxStyle}"
-                 Text="DAYS">
-        </TextBox>
+                 Text="DAYS"/>
         <TextBox Grid.Column="1"
                  Style="{StaticResource textBoxStyle}"
-                 Text="HOURS">
-        </TextBox>
+                 Text="HOURS"/>
         <TextBox Grid.Column="2"
                  Style="{StaticResource textBoxStyle}"
-                 Text="MINS">
-        </TextBox>
+                 Text="MINS"/>
         <TextBox Grid.Column="3"
                  Style="{StaticResource textBoxStyle}"
-                 Text="SECONDS">
-        </TextBox>
+                 Text="SECONDS"/>
         <TextBox Grid.Column="4"
                  Style="{StaticResource textBoxStyle}"
-                 Text="MILLISECONDS">
-        </TextBox>
-            <Image Grid.Row="0" Grid.Column="4"
+                 Text="MILLISECONDS"/>
+
+        <Image Grid.Row="0" Grid.Column="4"
+               HorizontalAlignment="Right" VerticalAlignment="Top"
+               Source="Resources/settings.png"
+               Stretch="None" Margin="0,5,45,0"
+               MouseUp="Settings_MouseUp"/>
+        <Image Grid.Row="0" Grid.Column="4"
                    HorizontalAlignment="Right" VerticalAlignment="Top"
-                   Height="100" Width="100"
-                   Margin="0,1,-48.243,0"
-                   Source="Resources/close.png"
-                   MouseUp="OnMouseUp">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="0.5" ScaleY="0.5"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
+Height="Auto" Width="Auto" Stretch="None" Margin="0,5,5,0"
+                  Source="Resources/close_icon.png"
+                   MouseUp="OnMouseUp"/>
     </Grid>
 </Window>

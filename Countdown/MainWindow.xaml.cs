@@ -24,5 +24,11 @@ namespace Countdown
             if (e.ChangedButton == MouseButton.Left)
                 Application.Current.Shutdown();
         }
+
+        private void Settings_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            //if (e.ChangedButton == MouseButton.Left)
+
+        }
     }
 }
