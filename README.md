@@ -5,4 +5,4 @@ A simple countdown viewer I developed while teaching myself basic XAML, MVVM, an
 
 Screencaps
 ----------
-![Countdown window](https://raw.githubusercontent.com/rencoder/Countdown/master/Screencaps/1.png)
+![Countdown window](https://raw.githubusercontent.com/rencoder/Countdown/master/Screencaps/03_10_2014.PNG)
