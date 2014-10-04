@@ -126,7 +126,7 @@
         <Image Grid.Row="0" Grid.Column="4"
                    HorizontalAlignment="Right" VerticalAlignment="Top"
 Height="Auto" Width="Auto" Stretch="None" Margin="0,5,5,0"
-                  Source="Resources/close_icon.png"
+                  Source="Resources/close.png"
                    MouseUp="OnMouseUp"/>
     </Grid>
 </Window>
