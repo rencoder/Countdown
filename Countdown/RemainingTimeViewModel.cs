@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Timers;
+using System.Windows;
 using System.Windows.Data;
 
 namespace Countdown
@@ -11,10 +12,11 @@ namespace Countdown
         private readonly Timer timer;
         private readonly DateTime _endDate = Properties.Settings.Default.EndDate;
         private TimeSpan _remainingTime;
+        public Command SettingsCommand { get { return new Command(() => Application.Current.Shutdown(), true); } }
+        public Command ExitCommand { get { return new Command(() => MessageBox.Show("Feature coming soon..."), true); } }
 
         public RemainingTimeViewModel()
         {
-            _endDate = default(DateTime);
             if (_endDate.Equals(default(DateTime)) || _endDate <= DateTime.Now)
             {
                 var window = new SelectEndDateWindow();

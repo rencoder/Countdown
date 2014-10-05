@@ -18,17 +18,5 @@ namespace Countdown
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
-
-        private void OnMouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-                Application.Current.Shutdown();
-        }
-
-        private void Settings_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            //if (e.ChangedButton == MouseButton.Left)
-
-        }
     }
 }

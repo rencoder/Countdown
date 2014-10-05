@@ -71,7 +71,7 @@
     </Window.Background>
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard Storyboard="{StaticResource storyboard1}"></BeginStoryboard>
+            <BeginStoryboard Storyboard="{StaticResource storyboard1}"/>
         </EventTrigger>
     </Window.Triggers>
     <Grid>
@@ -89,7 +89,7 @@
         <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"
                  HorizontalAlignment="Right"  VerticalAlignment="Bottom"      
                  Background="Transparent" 
-                 FontSize="150" Width="1080" Height="180" BorderThickness="0"
+                 FontSize="150" Width="1070" Height="180" BorderThickness="0"
                  Text="{Binding RemainingTime, Converter={StaticResource converter}}" 
                  Focusable="False" Cursor="Arrow">
             <TextBox.Foreground>
@@ -117,16 +117,19 @@
         <TextBox Grid.Column="4"
                  Style="{StaticResource textBoxStyle}"
                  Text="MILLISECONDS"/>
-
-        <Image Grid.Row="0" Grid.Column="4"
-               HorizontalAlignment="Right" VerticalAlignment="Top"
-               Source="Resources/settings.png"
-               Stretch="None" Margin="0,5,45,0"
-               MouseUp="Settings_MouseUp"/>
-        <Image Grid.Row="0" Grid.Column="4"
-                   HorizontalAlignment="Right" VerticalAlignment="Top"
-Height="Auto" Width="Auto" Stretch="None" Margin="0,5,5,0"
-                  Source="Resources/close.png"
-                   MouseUp="OnMouseUp"/>
+        <StackPanel Grid.Row="0" Grid.Column="4"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Command="{Binding ExitCommand}"
+                    ToolTip="Exit">
+                <Image Source="Resources/settings.png" Stretch="None"/>
+            </Button>
+            <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Command="{Binding SettingsCommand}"
+                    ToolTip="Settings">
+            <Image Source="Resources/close.png" Stretch="None" />
+        </Button>
+        </StackPanel>
     </Grid>
 </Window>

@@ -6,12 +6,6 @@
         WindowStyle="None" Padding="0,20,0,0" ResizeMode="NoResize"
         MouseMove="Window_OnMouseMove">
     <Window.Resources>
-        <Style
-            TargetType="{x:Type DatePickerTextBox}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
         <Style 
             TargetType="{x:Type TextBox}">
             <EventSetter Event="PreviewTextInput" Handler="OnPreviewTextInput"/>

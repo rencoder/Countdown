@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command.cs" />
     <Compile Include="SelectEndDateWindow.xaml.cs">
       <DependentUpon>SelectEndDateWindow.xaml</DependentUpon>
     </Compile>
