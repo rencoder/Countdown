@@ -121,13 +121,13 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Right" VerticalAlignment="Top">
             <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                    Command="{Binding ExitCommand}"
-                    ToolTip="Exit">
+                    Command="{Binding SettingsCommand}"
+                    ToolTip="Settings">
                 <Image Source="Resources/settings.png" Stretch="None"/>
             </Button>
             <Button Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                    Command="{Binding SettingsCommand}"
-                    ToolTip="Settings">
+                    Command="{Binding ExitCommand}"
+                    ToolTip="Exit">
             <Image Source="Resources/close.png" Stretch="None" />
         </Button>
         </StackPanel>

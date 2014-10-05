@@ -12,8 +12,8 @@ namespace Countdown
         private readonly Timer timer;
         private readonly DateTime _endDate = Properties.Settings.Default.EndDate;
         private TimeSpan _remainingTime;
-        public Command SettingsCommand { get { return new Command(() => Application.Current.Shutdown(), true); } }
-        public Command ExitCommand { get { return new Command(() => MessageBox.Show("Feature coming soon..."), true); } }
+        public Command SettingsCommand { get { return new Command(() => MessageBox.Show("Feature coming soon..."), true); } }
+        public Command ExitCommand { get { return new Command(() => Application.Current.Shutdown(), true); } }
 
         public RemainingTimeViewModel()
         {
