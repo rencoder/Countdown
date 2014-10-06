@@ -12,20 +12,17 @@
     <Window.Resources>
         <Storyboard x:Key="storyboard1" AutoReverse="True" RepeatBehavior="Forever"/>
         <viewModel:TimeSpanConverter x:Key="converter"/>
-        <Style x:Key="textBoxStyle"
-            TargetType="TextBox">
+        <Style x:Key="labelStyle"
+            TargetType="Label">
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect Opacity="0.35" Direction="700" BlurRadius="10"/>
                 </Setter.Value>
             </Setter>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontSize" Value="38"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="Focusable" Value="False"/>
-            <Setter Property="Cursor" Value="Arrow"/>
             <Setter Property="Grid.Row" Value="2"/>
         </Style>
     </Window.Resources>
@@ -86,13 +83,11 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1.55*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"
-                 HorizontalAlignment="Right"  VerticalAlignment="Bottom"      
-                 Background="Transparent" 
-                 FontSize="150" Width="1070" Height="180" BorderThickness="0"
-                 Text="{Binding RemainingTime, Converter={StaticResource converter}}" 
-                 Focusable="False" Cursor="Arrow">
-            <TextBox.Foreground>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"
+                 HorizontalAlignment="Right"  VerticalAlignment="Bottom"
+                 FontSize="150" Width="1070" Height="180"
+                 Content="{Binding RemainingTime, Converter={StaticResource converter}}">
+            <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
                     <GradientStop Color="#FF535353" Offset="1"/>
@@ -100,23 +95,23 @@
                     <GradientStop Color="#FFA0A0A0" Offset="0.459"/>
                     <GradientStop Color="#FF555555" Offset="0.346"/>
                 </LinearGradientBrush>
-            </TextBox.Foreground>
-        </TextBox>
-        <TextBox Grid.Column="0"
-                 Style="{StaticResource textBoxStyle}"
-                 Text="DAYS"/>
-        <TextBox Grid.Column="1"
-                 Style="{StaticResource textBoxStyle}"
-                 Text="HOURS"/>
-        <TextBox Grid.Column="2"
-                 Style="{StaticResource textBoxStyle}"
-                 Text="MINS"/>
-        <TextBox Grid.Column="3"
-                 Style="{StaticResource textBoxStyle}"
-                 Text="SECONDS"/>
-        <TextBox Grid.Column="4"
-                 Style="{StaticResource textBoxStyle}"
-                 Text="MILLISECONDS"/>
+            </Label.Foreground>
+        </Label>
+        <Label Grid.Column="0"
+                 Style="{StaticResource labelStyle}"
+                 Content="DAYS"/>
+        <Label Grid.Column="1"
+                 Style="{StaticResource labelStyle}"
+                 Content="HOURS"/>
+        <Label Grid.Column="2"
+                 Style="{StaticResource labelStyle}"
+                 Content="MINS"/>
+        <Label Grid.Column="3"
+                 Style="{StaticResource labelStyle}"
+                 Content="SECONDS"/>
+        <Label Grid.Column="4"
+                 Style="{StaticResource labelStyle}"
+                 Content="MILLISECONDS"/>
         <StackPanel Grid.Row="0" Grid.Column="4"
                     Orientation="Horizontal"
                     HorizontalAlignment="Right" VerticalAlignment="Top">
